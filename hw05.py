@@ -75,6 +75,15 @@ def main ():
     digit = input("Give an single number character: ")
     digit = get_digit(digit)
     check_pattern(letter, digit, st_list)
+    choice = input("Try Again? (y/n): ")
+    while choice == "y":
+        letter = input("Give a single uppercase letter: ")
+        letter = get_letter(letter)
+        digit = input("Give an single number character: ")
+        digit = get_digit(digit)
+        check_pattern(letter, digit, st_list)
+        choice = input("Try Again? (y/n): ")
+    
 
     # -------------------------------------------------
     # No need to modify anything Below this line
