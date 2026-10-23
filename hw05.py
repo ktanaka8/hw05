@@ -4,41 +4,49 @@ Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
 
-def get_letter(l):
+def get_letter(letter):
     """ Add your own Docstring """
     # remove the default return and add your code
-    while len(l) != 1 or (l not in {"A", "B", "C"}):
-        if len(l)==1:
-            if l in {"A", "B", "C"}:
+    while len(letter) != 1 or (letter not in {"A", "B", "C"}):
+        if len(letter)==1:
+            if letter in {"A", "B", "C"}:
                 continue
             else:
                 print("Error: You provided the wrong character.")
-                l = input("Give a single uppercase letter: ")
+                letter = input("Give a single uppercase letter: ")
         else:
             print("Error: it needs to be a single character.")
-            l = input("Give a single uppercase letter: ")
-    return l
+            letter = input("Give a single uppercase letter: ")
+    return letter
 
-def get_digit(n):
+def get_digit(digit):
     """ Add your own Docstring """
     # remove the default return and add your code
-    while not n.isdigit() or n not in range(1,4):
-        if n.isdigit():
-            n_int = int(n)
-            if 1 <= n_int <= 3:
-                return n_int
+    while not digit.isdigit() or digit not in range(1,4):
+        if digit.isdigit():
+            n_digit = int(digit)
+            if 1 <= n_digit <= 3:
+                return n_digit
             else:
                 print("Error: a single digit needs to be in [1,3].")
-                n=input("Give an single number character: ")
+                digit=input("Give an single number character: ")
         else:
             print("Error: your input should be only digits.")
-            n = input("Give an single number character: ")
-    return n_int
+            digit = input("Give an single number character: ")
+    return n_digit
 
 def check_pattern(letter, digit, lst):
     """ Add your own Docstring """
     # remove the default pass and add your code
-    pass
+    sequence = letter+str(digit)
+    sp_sequence = letter+"@"+str(digit)
+    print("Strings with the pattern:")
+    print()
+    for phrase in lst:
+        if (sp_sequence in phrase) or (sequence in phrase):
+            print(phrase, " ")
+        else:
+            continue
 
 
 #  The function main is INCOMPLETE, you must finish it
@@ -65,6 +73,7 @@ def main ():
     user_let = get_letter(user_let)
     user_num = input("Give an single number character: ")
     user_num = get_digit(user_num)
+    check_pattern(user_let, user_num, st_list)
 
     # -------------------------------------------------
     # No need to modify anything Below this line
