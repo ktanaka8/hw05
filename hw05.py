@@ -78,8 +78,8 @@ def main ():
     check_pattern(letter, digit, st_list)
     choice = input("Try Again? (y/n): ")
     while choice == "y":
-        letter = get_letter(input("Give a single uppercase letter: "))
-        digit = get_digit(input("Give an single number character: "))
+        letter = get_letter()
+        digit = get_digit()
         check_pattern(letter, digit, st_list)
         choice = input("Try Again? (y/n): ")
     
