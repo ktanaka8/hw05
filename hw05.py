@@ -4,16 +4,35 @@ Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
 
-def get_letter():
+def get_letter(l):
     """ Add your own Docstring """
     # remove the default return and add your code
-    return ""
+    while len(l) != 1 or (("A" or "B" or "C") not in l):
+        if len(l)==1:
+            if l in {"A", "B", "C"}:
+                return l
+            else:
+                print("Error: You provided the wrong character.")
+                l = input("Give a single uppercase letter: ")
+        else:
+            print("Error: it needs to be a single character.")
+            l = input("Give a single uppercase letter: ")
 
-def get_digit():
+def get_digit(n):
     """ Add your own Docstring """
     # remove the default return and add your code
-    return 0
-
+    while not n.isdigit() or n not in range(1,4):
+        if n.isdigit():
+            n_int = int(n)
+            if 1 <= n_int <= 3:
+                return n_int
+            else:
+                print("Error: a single digit needs to be in [1,3].")
+                n=input("Give an single number character: ")
+        else:
+            print("Error: your input should be only digits.")
+            n = input("Give an single number character: ")
+    return n_int
 
 def check_pattern(letter, digit, lst):
     """ Add your own Docstring """
@@ -41,8 +60,10 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
-
-    # Your code Here
+    user_let = input("Give a single uppercase letter: ")
+    get_letter(user_let)
+    user_num = input("Give an single number character: ")
+    get_digit(user_num)
 
     # -------------------------------------------------
     # No need to modify anything Below this line
