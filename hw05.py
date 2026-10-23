@@ -44,9 +44,10 @@ def check_pattern(letter, digit, lst):
     print()
     for phrase in lst:
         if (sp_sequence in phrase) or (sequence in phrase):
-            print(phrase, " ")
+            print(phrase, end=" ")
         else:
             continue
+    print ()
 
 
 #  The function main is INCOMPLETE, you must finish it
