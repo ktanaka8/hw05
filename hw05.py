@@ -4,11 +4,12 @@ Peers: (add any collaborators)
 References: (anything you checked to solve this)
 """
 
-def get_letter(letter):
+def get_letter():
     """ Add your own Docstring """
     # remove the default return and add your code
+    letter = input("Give a single uppercase letter: ")
     while len(letter) != 1 or (letter not in {"A", "B", "C"}):
-        if len(letter)==1:
+        if len(letter) == 1:
             if letter in {"A", "B", "C"}:
                 continue
             else:
@@ -19,9 +20,10 @@ def get_letter(letter):
             letter = input("Give a single uppercase letter: ")
     return letter
 
-def get_digit(digit):
+def get_digit():
     """ Add your own Docstring """
     # remove the default return and add your code
+    digit = input("Give an single number character: ")
     while not digit.isdigit() or digit not in range(1,4):
         if digit.isdigit():
             n_digit = int(digit)
@@ -40,10 +42,11 @@ def check_pattern(letter, digit, lst):
     # remove the default pass and add your code
     sequence = letter+str(digit)
     sp_sequence = letter+"@"+str(digit)
+    spsp_sequence = letter+"@@"+str(digit)
     print("Strings with the pattern:")
     print()
     for phrase in lst:
-        if (sp_sequence in phrase) or (sequence in phrase):
+        if (sp_sequence in phrase) or (sequence in phrase) or (spsp_sequence in phrase):
             print(phrase, end=" ")
         else:
             continue
@@ -70,10 +73,8 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
-    letter = input("Give a single uppercase letter: ")
-    letter = get_letter(letter)
-    digit = input("Give an single number character: ")
-    digit = get_digit(digit)
+    letter = get_letter()
+    digit = get_digit()
     check_pattern(letter, digit, st_list)
     choice = input("Try Again? (y/n): ")
     while choice == "y":
