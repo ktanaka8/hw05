@@ -70,11 +70,11 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
-    user_let = input("Give a single uppercase letter: ")
-    user_let = get_letter(user_let)
-    user_num = input("Give an single number character: ")
-    user_num = get_digit(user_num)
-    check_pattern(user_let, user_num, st_list)
+    letter = input("Give a single uppercase letter: ")
+    letter = get_letter(letter)
+    digit = input("Give an single number character: ")
+    digit = get_digit(digit)
+    check_pattern(letter, digit, st_list)
 
     # -------------------------------------------------
     # No need to modify anything Below this line
