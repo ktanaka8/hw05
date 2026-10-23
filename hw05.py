@@ -7,16 +7,17 @@ References: (anything you checked to solve this)
 def get_letter(l):
     """ Add your own Docstring """
     # remove the default return and add your code
-    while len(l) != 1 or (("A" or "B" or "C") not in l):
+    while len(l) != 1 or (l not in {"A", "B", "C"}):
         if len(l)==1:
             if l in {"A", "B", "C"}:
-                return l
+                continue
             else:
                 print("Error: You provided the wrong character.")
                 l = input("Give a single uppercase letter: ")
         else:
             print("Error: it needs to be a single character.")
             l = input("Give a single uppercase letter: ")
+    return l
 
 def get_digit(n):
     """ Add your own Docstring """
@@ -61,9 +62,9 @@ def main ():
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
     user_let = input("Give a single uppercase letter: ")
-    get_letter(user_let)
+    user_let = get_letter(user_let)
     user_num = input("Give an single number character: ")
-    get_digit(user_num)
+    user_num = get_digit(user_num)
 
     # -------------------------------------------------
     # No need to modify anything Below this line
