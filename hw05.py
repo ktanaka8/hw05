@@ -1,11 +1,19 @@
 """
-Name: (put your name here)
+Name: Kathryn Tanaka
 Peers: (add any collaborators)
-References: (anything you checked to solve this)
+References: Python Tutor
 """
 
 def get_letter():
-    """ Add your own Docstring """
+    """
+        Asks the user to enter a single uppercase letter and returns the input. Prints error message if not uppercase, not A, B, C, or not one letter
+        
+        Parameters:
+        - letter: single, uppercase letter A, B, C
+        
+        Returns:
+        - letter
+    """
     # remove the default return and add your code
     letter = input("Give a single uppercase letter: ")
     while len(letter) != 1 or (letter not in {"A", "B", "C"}):
@@ -21,7 +29,14 @@ def get_letter():
     return letter
 
 def get_digit():
-    """ Add your own Docstring """
+    """
+        Asks the user to enter a single digit. If digit is not a number from 1-3 or not a number, prints an error message.        
+        Parameters:
+        - digit: user-input number; must be from 1-3
+        
+        Returns:
+        - digit
+    """
     # remove the default return and add your code
     digit = input("Give an single number character: ")
     while not digit.isdigit() or digit not in range(1,4):
@@ -38,8 +53,16 @@ def get_digit():
     return n_digit
 
 def check_pattern(letter, digit, lst):
-    """ Add your own Docstring """
-    # remove the default pass and add your code
+    """
+        Checks the list for codes where letter and digit appear in specified order and prints in one line with spaces between.        
+        Parameters:
+        - sequence: string containing letter and digit
+        - sp_sequence: string containing letter, "@", and digit
+        - spsp_sequence: string containing letter, "@@", and digit
+        
+        Returns:
+        - None
+    """    # remove the default pass and add your code
     sequence = letter+str(digit)
     sp_sequence = letter+"@"+str(digit)
     spsp_sequence = letter+"@@"+str(digit)
